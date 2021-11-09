@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Contador </title>
+</head>
+
+<body>
+    <h1>Sistema de Calculadora</h1>
+
+    <td><input type="text" id="caixanumerodigitado" size="1" value="0"><br /></td>
+
+    <h1></h1>
+
+    <button onclick="somar()">Somar</button> 
+    <button onclick="diminuir()">Diminuir</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+  
+    <h3>Resultado:</h3>
+    <p id="resultado">0</p>
+
+    <h1></h1>
+
+    <button onclick="zerarresultado()">Zerar Resultado</button>
+
+    <script>
+        function somar() {
+
+                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+                
+                var resultado = parseFloat(document.querySelector("#resultado").innerText)
+
+                resultado = resultado + numerodigitado
+           
+                document.querySelector("#resultado").innerText = resultado
+
+                document.getElementById("caixanumerodigitado").value = 0
+
+        }
+        
+        function diminuir() {
+
+                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+                
+                var resultado = parseFloat(document.querySelector("#resultado").innerText)
+    
+                resultado = resultado - numerodigitado
+               
+                document.querySelector("#resultado").innerText = resultado
+    
+                document.getElementById("caixanumerodigitado").value = 0
+
+        }
+
+        function multiplicar() {
+
+                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+                
+                var resultado = parseFloat(document.querySelector("#resultado").innerText)
+    
+                resultado = resultado * numerodigitado
+               
+                document.querySelector("#resultado").innerText = resultado
+    
+                document.getElementById("caixanumerodigitado").value = 0
+
+        }
+
+        function dividir() {
+
+                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+                
+                var resultado = parseFloat(document.querySelector("#resultado").innerText)
+    
+                resultado = resultado / numerodigitado
+               
+                document.querySelector("#resultado").innerText = resultado
+    
+                document.getElementById("caixanumerodigitado").value = 0
+
+        }
+
+        function zerarresultado() {
+
+            document.querySelector("#resultado").innerText = 0
+            
+            document.getElementById("caixanumerodigitado").value = 0
+
+        }
+
+
+    </script>
+</body>
+
+</html>
