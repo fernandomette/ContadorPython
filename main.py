@@ -1,6 +1,9 @@
-variavelqualquer = 'Ola mundo'
-print(variavelqualquer)
 
+def global_sum(number, resultado):
+    return number + resultado
+
+
+    
 
 '''
         function somar() {
