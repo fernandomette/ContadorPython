@@ -1,4 +1,4 @@
-...
+
         var listadehistorico = [qualquer = []]
 
         function CriaUlLI(array) 
