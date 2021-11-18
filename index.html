@@ -1,119 +1,38 @@
-<PY>
 
-
-
-</PY>
 
 <!DOCTYPE html>
 <html>
 
 <head>
     <title> Contador </title>
-    <style>
-        body 
-            {
-            text-align: center;
-            font-family: arial, sans-serif;
-            }
-
-        table 
-            {
-            margin: 0 auto;
-            }
-
-        td 
-            {
-            padding: 10px;
-            }
-                     
-        h1
-            {
-            font-size: 48px;
-            color: #066a75;
-            padding: 10px 0;
-            font-family: Arial,sans-serif;
-            font-weight: bold;
-            text-align: center;
-            padding-bottom: 30px;
-            }
-
-        h1:after
-            {
-            content: ' ';
-            display: block;
-            width: 100%;
-            height: 2px;
-            margin-top: 10px;
-            background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
-            background: linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
-            }
-        
-        label
-            {
-            color: #405c60;
-            position: relative;
-            width: 20%!important;
-            }
-    
-        input[type="submit"]
-            {
-            width: 15%!important;
-            cursor: pointer;  
-            background: #3d9db3;
-            color: #fff;
-            font-size: 20px;  
-            border: 1px solid #fff; 
-            text-shadow: 0 1px 1px #333;
-            
-            -webkit-border-radius: 5px;
-            border-radius: 5px;
-            
-            transition: all 0.2s linear;
-            }
-        input[type="submit"]:hover
-            {
-            background: #4ab3c6;
-            width: 20%!important;
-            }
-    </style>
+    <link rel="stylesheet" type="text/css" href="front.css" />
 </head>
 
-<body>
-
+<br>
     <h1>Sistema de Calculadora</h1>
+    <form>
 
-     <form action="main.py">
-            <p>
-                <label for="numero">Número:</label><br>
-                <input type="text" id="numerodigitado" name="numerodigitado" valuer ="" required/><br>
-            </p>
-            
-            <p>
-                <select id="operacao" name="operacao" required/>
-                    <option value="1" selected>Somar</option>
-                    <option value="2">Diminuir</option>
-                    <option value="3">Multiplicar</option>
-                    <option value="4">Dividir</option>
-                </select>
-            </p>
-              
-            <p>  
-                <button>Calular</button>
-            </p>
-        </form> 
+    </form>
+        <input type="text" id="caixanumerodigitado" name="caixanumerodigitado" size="1" value="0" required>
+        <br> </br>
 
-        <h3>Resultado:</h3>
-        <p id="resultado">0</p>
+        <input type="submit" onclick="somar()" value="Somar (+)">
+        <input type="submit" onclick="diminuir()"  value="Diminuir (-)">
+        <input type="submit" onclick="multiplicar()" value="Multiplicar (x)">
+        <input type="submit" onclick="dividir()"  value="Dividir (/)">
+    </form>
 
-        <form>           
-            <p>  
-                <input id="zeraresutado" type="submit" value="Zerar Resultado">
-            </p>
-        </form> 
+    <h3>Resultado:</h3>
+    <p id="resultado">0</p>
 
-        <h1> </h1>
+    <button onclick="zerarresultado()">Zerar Resultado</button>
+    <br> </br>
 
+    <p id="listahistorico"></p>
+	<div id="listahistorico"></div>
 
 </body>
+
+<script src="/calculo.js"></script>
 
 </html>
