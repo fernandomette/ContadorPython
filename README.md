@@ -1,3 +1,3 @@
 # ContadorPython
 Programando Em Python, aprendendo sintaxe
-https://affectionate-perlman-bda88d.netlify.app/
+https://contador-python-mette.netlify.app/
