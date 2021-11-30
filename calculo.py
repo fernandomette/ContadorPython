@@ -1,117 +1,73 @@
 
-        var listadehistorico = [qualquer = []]
+qualquer = []
+listadehistorico = [qualquer]
 
-        function CriaUlLI(array) 
-            {
 
-                var listhistoricoul = document.createElement('ul')
+def CriaUlLI(array):
+    listhistoricoul = document.createElement('ul')
+    item = document.createElement('li')
+    for i in array:
+        item.appendChild(document.createTextNode(array[i]))
+        listhistoricoul.appendChild(item)
+    return listhistoricoul
 
-                var item = document.createElement('li')
 
-                for(var i = 0; i < array.length; i++) 
-                    {
-                        item.appendChild(document.createTextNode(array[i]));
-                        listhistoricoul.appendChild(item);
-                    }
+def somar():
+    numerodigitado = parseFloat(
+        document.getElementById("caixanumerodigitado").value)
+    resultado = parseFloat(document.querySelector("#resultado").innerText)
+    valoranterior = resultado
+    resultado = resultado + numerodigitado
+    document.querySelector("#resultado").innerText = resultado
+    document.getElementById("caixanumerodigitado").value = ""
+    qualquer.splice(0, qualquer.length)
+    qualquer.push(valoranterior, " + ", numerodigitado, ' = ', resultado)
+    document.getElementById('listahistorico').appendChild(
+        CriaUlLI(listadehistorico[0]))
 
-                // Retorne a lista construída:
-                return listhistoricoul;
-            }
-        
-        function somar() {
 
-                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+def diminuir():
+    numerodigitado = parseFloat(
+        document.getElementById("caixanumerodigitado").value)
+    resultado = parseFloat(document.querySelector("#resultado").innerText)
+    valoranterior = resultado
+    resultado = resultado - numerodigitado
+    document.querySelector("#resultado").innerText = resultado
+    document.getElementById("caixanumerodigitado").value = ""
+    qualquer.splice(0, qualquer.length)
+    qualquer.push(valoranterior, " - ", numerodigitado, ' = ', resultado)
+    document.getElementById('listahistorico').appendChild(
+        CriaUlLI(listadehistorico[0]))
 
-                var resultado = parseFloat(document.querySelector("#resultado").innerText)
-                
-                var valoranterior = resultado
 
-                resultado = resultado + numerodigitado
+def multiplicar():
+    numerodigitado = parseFloat(
+        document.getElementById("caixanumerodigitado").value)
+    resultado = parseFloat(document.querySelector("#resultado").innerText)
+    valoranterior = resultado
+    resultado = resultado * numerodigitado
+    document.querySelector("#resultado").innerText = resultado
+    document.getElementById("caixanumerodigitado").value = ""
+    qualquer.splice(0, qualquer.length)
+    qualquer.push(valoranterior, " x ", numerodigitado, ' = ', resultado)
+    document.getElementById('listahistorico').appendChild(
+        CriaUlLI(listadehistorico[0]))
 
-                document.querySelector("#resultado").innerText = resultado
 
-                document.getElementById("caixanumerodigitado").value = ""
+def dividir():
+    numerodigitado = parseFloat(
+        document.getElementById("caixanumerodigitado").value)
+    resultado = parseFloat(document.querySelector("#resultado").innerText)
+    valoranterior = resultado
+    resultado = resultado / numerodigitado
+    document.querySelector("#resultado").innerText = resultado
+    document.getElementById("caixanumerodigitado").value = ""
+    qualquer.splice(0, qualquer.length)
+    qualquer.push(valoranterior, " / ", numerodigitado, ' = ', resultado)
+    document.getElementById('listahistorico').appendChild(
+        CriaUlLI(listadehistorico[0]))
 
-                qualquer.splice(0, qualquer.length);
 
-                qualquer.push(valoranterior, " + ", numerodigitado , ' = ', resultado)
-
-                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
-
-        }
-        
-        function diminuir() {
-
-                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
-                
-                var resultado = parseFloat(document.querySelector("#resultado").innerText)
-
-                var valoranterior = resultado
-    
-                resultado = resultado - numerodigitado
-               
-                document.querySelector("#resultado").innerText = resultado
-    
-                document.getElementById("caixanumerodigitado").value = ""
-
-                qualquer.splice(0, qualquer.length);
-
-                qualquer.push(valoranterior, " - ", numerodigitado , ' = ', resultado)
-
-                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
-
-        }
-
-        function multiplicar() {
-
-                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
-                
-                var resultado = parseFloat(document.querySelector("#resultado").innerText)
-
-                var valoranterior = resultado
-    
-                resultado = resultado * numerodigitado
-               
-                document.querySelector("#resultado").innerText = resultado
-    
-                document.getElementById("caixanumerodigitado").value = ""
-
-                qualquer.splice(0, qualquer.length);
-
-                qualquer.push(valoranterior, " x ", numerodigitado , ' = ', resultado)
-
-                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
-
-        }
-
-        function dividir() {
-
-                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
-                
-                var resultado = parseFloat(document.querySelector("#resultado").innerText)
-
-                var valoranterior = resultado
-    
-                resultado = resultado / numerodigitado
-               
-                document.querySelector("#resultado").innerText = resultado
-    
-                document.getElementById("caixanumerodigitado").value = ""
-
-                qualquer.splice(0, qualquer.length);
-
-                qualquer.push(valoranterior, " / ", numerodigitado , ' = ', resultado)
-
-                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
-
-        }
-
-        function zerarresultado() {
-
-            document.querySelector("#resultado").innerText = 0
-            
-            document.getElementById("caixanumerodigitado").value = 0
-
-        }
-
-...
+def zerarresultado():
+    document.querySelector("#resultado").innerText = 0
+    document.getElementById("caixanumerodigitado").value = 0
